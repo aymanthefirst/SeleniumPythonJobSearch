@@ -3,11 +3,11 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 
-email = "harakeayman@gmail.com"
-password = "browncattaty22"
+email = "***********"
+password = "********"
 job = "Java developer"
 location = "London"
-KEYWORDS_TO_AVOID = ["Alfresco", "Sparta", "Hyland"]
+KEYWORDS_TO_AVOID = ["*****", "*****", "********"]
 
 currentJobId = ""
 previousJobId = ""
