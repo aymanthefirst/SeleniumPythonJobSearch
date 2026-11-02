@@ -1,13 +1,16 @@
+import os
+
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 
 driver = webdriver.Chrome()
 
-email = "***********"
-password = "********"
-job = "Java developer"
-location = "London"
-KEYWORDS_TO_AVOID = ["*****", "*****", "********"]
+email = os.environ["TOTALJOBS_EMAIL"]
+password = os.environ["TOTALJOBS_PASSWORD"]
+job = os.environ.get("JOB_TITLE", "Java developer")
+location = os.environ.get("JOB_LOCATION", "London")
+_keywords = os.environ.get("KEYWORDS_TO_AVOID", "")
+KEYWORDS_TO_AVOID = [k.strip() for k in _keywords.split(",") if k.strip()]
 
 currentJobId = ""
 previousJobId = ""
